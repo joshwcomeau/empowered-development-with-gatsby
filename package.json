@@ -1,0 +1,14 @@
+{
+  "name": "empowered-workflows-talk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck talk.mdx --port 7777"
+  },
+  "keywords": [],
+  "author": "Josh Comeau",
+  "devDependencies": {
+    "mdx-deck": "^3.0.13"
+  }
+}
