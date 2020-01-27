@@ -10,5 +10,11 @@
   "author": "Josh Comeau",
   "devDependencies": {
     "mdx-deck": "^3.0.13"
+  },
+  "resolutions": {
+    "mdx-deck/**/gatsby": "2.18.4"
+  },
+  "dependencies": {
+    "styled-components": "^5.0.0"
   }
 }

@@ -1,7 +1,201 @@
-<img src="./assets/gatsby-logo.svg" />
+import myTheme from "./theme";
+
+export const theme = myTheme;
+
+import gatsbyLogo from "./assets/gatsby-logo.svg";
+
+<img src={gatsbyLogo} />
 
 # Empowered Development with Gatsby.js
 
 ---
 
-This is a new deck!
+👋🏻 I'm Josh
+
+- Staff Software Eng at Gatsby
+- Cat person
+- Web builder
+
+---
+
+Years ago I built a website for my mom.
+
+import pamWebsiteHero from "./assets/pam-website-hero.png";
+
+<img src={pamWebsiteHero} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+It features a list of works:
+
+import pamWebsiteGrid from "./assets/pam-website-grid.png";
+
+<img src={pamWebsiteGrid} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+This data was sourced from a .js file in the repo:
+
+import pamWebsiteData from "./assets/pam-website-data.png";
+
+<img src={pamWebsiteData} />
+
+---
+
+### Question
+
+How easy do you think it is for my mom to update this website?
+
+---
+
+- Weird structure
+- The data is in Javascript
+- It's checked into Git
+
+---
+
+**High** barrier to entry
+
+---
+
+Wordpress:
+
+import wpUpload from "./assets/wp-upload.gif";
+
+<img src={wpUpload} />
+
+---
+
+**Low** barrier to entry
+
+---
+
+We always talk about:
+
+- user experience
+- developer experience
+
+---
+
+There's another seat at this table though! The _non-technical\*_ people who work on our products.
+
+---
+
+_*non-technical_, in this case, referring to people who build websites but don't call themselves "software developers".
+
+---
+
+Just FYI...
+
+import jqueryVsReact from "./assets/jquery-vs-react.png";
+
+<img src={jqueryVsReact} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+
+---
+
+Experience for the **JS-file-in-codebase** approach:
+
+<table>
+  <thead>
+    <tr>
+      <th>UX</th>
+      <th>DX</th>
+      <th>CCX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Big>😄</Big>
+      </td>
+      <td>
+        <Big>🥳</Big>
+      </td>
+      <td>
+        <Big>🙁</Big>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+See also: JSON, MDX, anything that lives in source control.
+
+---
+
+Experience for the **monolithic CMS** approach:
+
+<table>
+  <thead>
+    <tr>
+      <th>UX</th>
+      <th>DX</th>
+      <th>CCX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Big>😐</Big>
+      </td>
+      <td>
+        <Big>😬</Big>
+      </td>
+      <td>
+        <Big>😄</Big>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+AKA Wordpress, Squarespace, Shopify, etc
+
+---
+
+"There's got to be a better way!"
+
+
+import failTaco from "./assets/fail-taco.gif";
+
+<img src={failTaco} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+
+---
+
+# The Headless CMS
+
+<ul>
+  <Appear>
+    <div>...was not it.</div>
+    <div>...at first.</div>
+  </Appear>
+</ul>
+
+---
+
+import headlessCms from "./assets/headless-cms-chart.png";
+
+<img src={headlessCms} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+<Small>
+  Source:
+  https://kontent.ai/blog/7-tips-for-explaining-headless-cms-to-your-clients
+</Small>
+
+---
+
+Content creators have a friendly UI to update copy...
+
+...But no way to preview it!
+
+---
+
+import jezebel from "./assets/jezebel.png";
+
+<img src={jezebel} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+<Small>
+  Jezebel.com
+</Small>
+
+---
