@@ -4,6 +4,7 @@ export const theme = myTheme;
 
 import gatsbyLogo from "./assets/gatsby-logo.svg";
 
+
 <img src={gatsbyLogo} />
 
 # Empowered Development with Gatsby.js
@@ -66,7 +67,7 @@ import wpUpload from "./assets/wp-upload.gif";
 
 ---
 
-**Low** barrier to entry
+**Lower** barrier to entry
 
 ---
 
@@ -159,7 +160,6 @@ import failTaco from "./assets/fail-taco.gif";
 
 <img src={failTaco} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
 
-
 ---
 
 # The Headless CMS
@@ -167,26 +167,94 @@ import failTaco from "./assets/fail-taco.gif";
 <ul>
   <Appear>
     <div>...was not it.</div>
-    <div>...at first.</div>
+    <div>...at least, not at first.</div>
   </Appear>
 </ul>
 
 ---
 
-import headlessCms from "./assets/headless-cms-chart.png";
+### What is a headless CMS?
 
-<img src={headlessCms} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
-
-<Small>
-  Source:
-  https://kontent.ai/blog/7-tips-for-explaining-headless-cms-to-your-clients
-</Small>
+- Structured relational data model
+- Friendly admin UI
+- Serve data through an API
 
 ---
 
+### 1. Structured relational data model
+
+import cmsModel from "./assets/cms-model.png";
+
+<img src={cmsModel} style={{ maxWidth: "80vw", height: 430 }} />
+
+---
+
+### 1. Structured relational data model
+
+import cmsRelationships from "./assets/cms-relationships.png";
+
+<img src={cmsRelationships} style={{ maxWidth: "80vw", height: 430 }} />
+
+---
+
+### 2. Friendly admin UI
+
+For the gatsbyjs.com site, we use **Contentful**.
+
+---
+
+import contentfulSrc from "./assets/contentful.png";
+
+<img src={contentfulSrc} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+### 3. Serve data through an API
+
+
+
+<CodeSnippet
+  code={`const AllTheFaqs = () => {
+  const { allContentfulFaq } = useStaticQuery(
+    graphql\`
+      {
+        allContentfulFaq(filter: { category: { eq: "Docs" } }) {
+          edges {
+            node {
+              id
+              question
+              answer {
+                html
+              }
+            }
+          }
+        }
+      }
+    \`
+  )
+  return (
+    <div>
+      {allContentfulFaq.edges.map(({ node }) => (
+        <FaqCard key={node.id}>
+          <FaqCard.Question question={node.question} />
+          <FaqCard.Answer answer={node.answer.html} />
+        </FaqCard>
+      ))}
+    </div>
+  )
+}`}
+/>
+
+
+---
+
+### Pretty cool, right?
+
 Content creators have a friendly UI to update copy...
 
-...But no way to preview it!
+<Appear>
+  <p>But no way to preview it!</p>
+</Appear>
 
 ---
 
@@ -199,3 +267,115 @@ import jezebel from "./assets/jezebel.png";
 </Small>
 
 ---
+
+Content creators need _real-time feedback_, just like developers do.
+
+---
+
+import previewSplash from './assets/preview.jpg';
+
+<img src={previewSplash} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+🔌 Gatsby Cloud does this now
+
+---
+
+
+import previewInCms from './assets/preview-in-cms.png';
+
+<img src={previewInCms} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+It's a _whole site_ preview, not just a _page_ preview.
+
+Stakeholders can check any part of the site or app.
+
+---
+
+It features _hot reload_ with _preserved scroll position_.
+
+Low-latency, real-time feedback.
+
+---
+
+Sanity uses Gatsby Preview to do something pretty amazing
+
+import sanity from './assets/sanity.gif';
+
+<img src={sanity} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+Historically, monolithic tools like Wordpress have been WYSIWYG.
+
+The stuff we build nowadays isn't WYSIGYGable.
+
+---
+
+### A Quick Game
+
+Who does payments better?
+
+Stripe or Wordpress?
+
+---
+
+Who does auth better?
+
+Auth0 or Wordpress?
+
+---
+
+Who does e-commerce better?
+
+Shopify or Wordpress?
+
+---
+
+# The Content Mesh
+
+<!-- By specializing on a particular part of the user experience, companies can deliver better UX. -->
+
+---
+
+import contentMesh from './assets/content-mesh.png';
+
+<img src={contentMesh} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+
+---
+
+import nightMarkets from './assets/night-markets.jpg';
+
+<img src={nightMarkets} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+So _in theory_ headless CMS' can do the "CMS" part better than monolithic ones.
+
+---
+
+Live preview is already a big leap forward, but what else can we do?
+
+---
+
+### It's more than copy.
+
+---
+
+# Case Study
+
+### Gatsbyjs.com navigation
+
+---
+
+import dotCom from './assets/dot-com.png';
+
+<img src={dotCom} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+import dotComMenuOpen from './assets/dot-com-menu-open.png';
+
+<img src={dotComMenuOpen} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />

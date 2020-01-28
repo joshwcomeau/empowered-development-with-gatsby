@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import CodeSnippet from './CodeSnippet';
+
 const Table = styled.table`
   max-width: 60%;
 
@@ -33,6 +35,7 @@ export default {
     Big: Big,
     Small: Small,
     h1: H1,
-    p: P
+    p: P,
+    CodeSnippet,
   }
 };

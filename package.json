@@ -15,6 +15,7 @@
     "mdx-deck/**/gatsby": "2.18.4"
   },
   "dependencies": {
+    "react-live": "^2.2.2",
     "styled-components": "^5.0.0"
   }
 }
