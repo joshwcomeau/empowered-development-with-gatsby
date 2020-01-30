@@ -3,27 +3,27 @@ import myTheme from "./theme";
 export const theme = myTheme;
 
 import gatsbyLogo from "./assets/gatsby-logo.svg";
+import SpeakerNote from './SpeakerNote'
 
 
 <img src={gatsbyLogo} />
 
-# Empowered Development with Gatsby.js
+# Empowered Development with Gatsby
+
 
 ---
 
-👋🏻 I'm Josh
+So I built a website for my mom.
 
-- Staff Software Eng at Gatsby
-- Cat person
-- Web builder
-
----
-
-Years ago I built a website for my mom.
 
 import pamWebsiteHero from "./assets/pam-website-hero.png";
 
-<img src={pamWebsiteHero} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+<img src={pamWebsiteHero} style={{ minHeight: 583, maxWidth: "80vw", maxHeight: "70vh" }} />
+
+<SpeakerNote>
+  My mom is an artist.
+  Built this a few years back with Inferno
+</SpeakerNote>
 
 ---
 
@@ -31,7 +31,7 @@ It features a list of works:
 
 import pamWebsiteGrid from "./assets/pam-website-grid.png";
 
-<img src={pamWebsiteGrid} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+<img src={pamWebsiteGrid} style={{ minHeight: 583, maxWidth: "80vw", maxHeight: "70vh" }} />
 
 ---
 
@@ -39,7 +39,11 @@ This data was sourced from a .js file in the repo:
 
 import pamWebsiteData from "./assets/pam-website-data.png";
 
-<img src={pamWebsiteData} />
+<img src={pamWebsiteData} width={628} height={366} />
+
+<SpeakerNote>
+  Data is sourced from the filesystem in
+</SpeakerNote>
 
 ---
 
@@ -47,11 +51,13 @@ import pamWebsiteData from "./assets/pam-website-data.png";
 
 How easy do you think it is for my mom to update this website?
 
----
-
-- Weird structure
-- The data is in Javascript
-- It's checked into Git
+<ul>
+  <Appear>
+    <li>Unclear structure</li>
+    <li>Strict validation</li>
+    <li>It's checked into Git</li>
+  </Appear>
+</ul>
 
 ---
 
@@ -443,15 +449,22 @@ https://www.youtube.com/watch?v=v88snd6EUaY
 
 ---
 
+https://twitter.com/eunjae_lee/status/1218662468681183236
+
+
+---
+
 # Drawbacks
 
 <ul>
 <Appear>
   <li>This stuff is pretty bleeding-edge</li>
   <li>Can be more work upfront</li>
-  <li>...That's all I got</li>
+  <li>Combinatorial explosion means that design problems may occur</li>
 </Appear>
 </ul>
+
+https://twitter.com/pierre_nel/status/1222601162609786880
 
 ---
 
