@@ -1,3 +1,5 @@
+require('isomorphic-fetch');
+
 exports.handler = async (event, context) => {
   const key = 'ijSQWZi4FeFsWYisuwrovuZQu';
   const secret = 'eYBa4Ud9hMrq4pMOlt3rivXNaD65qkgvHdPUsUaAkvjA5TzzpH';
