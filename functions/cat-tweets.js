@@ -30,9 +30,6 @@ exports.handler = async (event, context) => {
       })
     })
     .then(res => res.json())
-    .then(json => {
-      console.log('got data', json)
-    })
 
   const tweetIds = data.statuses.map(tweet => tweet.id_str)
 
