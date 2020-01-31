@@ -1,6 +1,41 @@
 exports.handler = async (event, context) => {
+  const key = 'ijSQWZi4FeFsWYisuwrovuZQu';
+  const secret = 'eYBa4Ud9hMrq4pMOlt3rivXNaD65qkgvHdPUsUaAkvjA5TzzpH';
+
+  let buff = new Buffer(`${key}:${secret}`);
+  let base64data = buff.toString('base64');
+
+  const authApiEndpoint = `https://api.twitter.com/oauth2/token`;
+
+  const data = await fetch(authApiEndpoint, {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+      'Authorization': `Basic ${base64data}`
+    },
+    body: 'grant_type=client_credentials',
+  })
+    .then(res => res.json())
+    .then(json => {
+      const {access_token} = json;
+
+      const HASHTAG = '%23GatsbyDaysPets';
+
+      return fetch(`https://api.twitter.com/1.1/search/tweets.json?q=${HASHTAG}`, {
+        headers: {
+          'Authorization': `Bearer ${access_token}`,
+        },
+      })
+    })
+    .then(res => res.json())
+    .then(json => {
+      console.log('got data', json)
+    })
+
+  const tweetIds = data.statuses.map(tweet => tweet.id_str)
+
   return {
     statusCode: 200,
-    body: "Hello world!",
+    body: tweetIds.join(';'),
   }
 }

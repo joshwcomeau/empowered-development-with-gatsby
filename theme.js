@@ -15,7 +15,8 @@ const Big = styled.span`
   font-size: 3em;
 `;
 const Small = styled.span`
-  font-size: 1rem;
+  font-size: 2rem;
+  margin-top: 2rem
 `;
 
 const P = styled.p`

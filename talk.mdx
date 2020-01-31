@@ -2,13 +2,9 @@ import myTheme from "./theme";
 
 export const theme = myTheme;
 
-import gatsbyLogo from "./assets/gatsby-logo.svg";
 import SpeakerNote from './SpeakerNote'
+import gatsbyLogo from "./assets/gatsby-logo.svg";
 
-
-<img src={gatsbyLogo} />
-
-# Empowered Development with Gatsby
 
 
 ---
@@ -92,27 +88,21 @@ _*non-technical_, in this case, referring to people who build websites but don't
 
 ---
 
-Just FYI...
-
-import jqueryVsReact from "./assets/jquery-vs-react.png";
-
-<img src={jqueryVsReact} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
-
-
----
-
 Experience for the **JS-file-in-codebase** approach:
 
 <table>
   <thead>
     <tr>
-      <th>UX</th>
-      <th>DX</th>
-      <th>CCX</th>
+      <Appear>
+        <th>UX</th>
+        <th>DX</th>
+        <th>CCX</th>
+      </Appear>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <Appear>
       <td>
         <Big>😄</Big>
       </td>
@@ -122,11 +112,14 @@ Experience for the **JS-file-in-codebase** approach:
       <td>
         <Big>🙁</Big>
       </td>
+      </Appear>
     </tr>
   </tbody>
 </table>
 
-See also: JSON, MDX, anything that lives in source control.
+<Small>
+  See also: JSON, MDX, anything that lives in source control.
+</Small>
 
 ---
 
@@ -135,13 +128,16 @@ Experience for the **monolithic CMS** approach:
 <table>
   <thead>
     <tr>
+      <Appear>
       <th>UX</th>
       <th>DX</th>
       <th>CCX</th>
+      </Appear>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <Appear>
       <td>
         <Big>😐</Big>
       </td>
@@ -151,11 +147,21 @@ Experience for the **monolithic CMS** approach:
       <td>
         <Big>😄</Big>
       </td>
+      </Appear>
     </tr>
   </tbody>
 </table>
 
-AKA Wordpress, Squarespace, Shopify, etc
+<Small>
+  AKA Wordpress, Squarespace, Shopify, etc
+</Small>
+
+---
+
+import pickTwo from './assets/pick-2.png';
+
+<img src={pickTwo} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
 
 ---
 
@@ -168,22 +174,24 @@ import failTaco from "./assets/fail-taco.gif";
 
 ---
 
-# The Headless CMS
+<img src={gatsbyLogo} />
 
-<ul>
-  <Appear>
-    <div>...was not it.</div>
-    <div>...at least, not at first.</div>
-  </Appear>
-</ul>
+# Empowered Development with Gatsby
 
 ---
 
-### What is a headless CMS?
+# The Headless CMS
+
+import headlessCms from "./assets/headless.jpg";
+
+<img src={headlessCms} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+### What is a CMS?
 
 - Structured relational data model
-- Friendly admin UI
-- Serve data through an API
+- Friendly admin UI to update that data
 
 ---
 
@@ -215,9 +223,29 @@ import contentfulSrc from "./assets/contentful.png";
 
 ---
 
-### 3. Serve data through an API
+Monolithic CMS' like Wordpress also include a bunch of other stuff:
 
+- Website builders
+- Templates
+- User accounts
+- E-commerce
+- Pretty much anything via plugins
 
+---
+
+All that other stuff is the "head".
+
+This naming feels backwards to me.
+
+---
+
+A "headless" CMS exposes its data via an API.
+
+It has zero opinions about how the data is used.
+
+---
+
+### How we use it
 
 <CodeSnippet
   code={`const AllTheFaqs = () => {
@@ -251,12 +279,45 @@ import contentfulSrc from "./assets/contentful.png";
 }`}
 />
 
+---
+
+# The Content Mesh
+
+We can wire _many different_ services together instead of relying on one monolith for everything.
 
 ---
 
-### Pretty cool, right?
+### The bet: 
 
-Content creators have a friendly UI to update copy...
+Specialized companies create better stuff than monolithic ones
+
+---
+
+import nightMarkets from './assets/night-markets.jpg';
+
+<img src={nightMarkets} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+# Who does it better?
+
+- Payments: Stripe or Wordpress?
+- E-commerce: Shopify or Wordpress?
+- Auth: Auth0 or Wordpress?
+
+---
+
+So _in theory_ headless CMS' can do the "CMS" part better than monolithic ones...
+
+---
+
+But we also lose the _integration benefits_ of a cohesive system.
+
+---
+
+### For example
+
+Content creators have a friendly UI to update copy in a headless CMS...
 
 <Appear>
   <p>But no way to preview it!</p>
@@ -271,6 +332,13 @@ import jezebel from "./assets/jezebel.png";
 <Small>
   Jezebel.com
 </Small>
+
+---
+
+import jezebelCms from "./assets/jezebel-cms.png";
+
+<img src={jezebelCms} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
 
 ---
 
@@ -313,56 +381,7 @@ import sanity from './assets/sanity.gif';
 
 ---
 
-Historically, monolithic tools like Wordpress have been WYSIWYG.
-
-The stuff we build nowadays isn't WYSIGYGable.
-
----
-
-### A Quick Game
-
-Who does payments better?
-
-Stripe or Wordpress?
-
----
-
-Who does auth better?
-
-Auth0 or Wordpress?
-
----
-
-Who does e-commerce better?
-
-Shopify or Wordpress?
-
----
-
-# The Content Mesh
-
-<!-- By specializing on a particular part of the user experience, companies can deliver better UX. -->
-
----
-
-import contentMesh from './assets/content-mesh.png';
-
-<img src={contentMesh} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
-
-
----
-
-import nightMarkets from './assets/night-markets.jpg';
-
-<img src={nightMarkets} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
-
----
-
-So _in theory_ headless CMS' can do the "CMS" part better than monolithic ones.
-
----
-
-Live preview is already a big leap forward, but what else can we do?
+Live-previewing copy changes is just the beginning :o
 
 ---
 
@@ -372,7 +391,7 @@ Live preview is already a big leap forward, but what else can we do?
 
 # Case Study
 
-### Gatsbyjs.com navigation
+Gatsbyjs.com navigation
 
 ---
 
@@ -449,7 +468,34 @@ https://www.youtube.com/watch?v=v88snd6EUaY
 
 ---
 
-https://twitter.com/eunjae_lee/status/1218662468681183236
+# Limited CSS Subset
+
+import pierre1 from './assets/pierre-1.png';
+
+<img src={pierre1} style={{ maxWidth: "80vw", maxHeight: "70vh" }}  />
+
+<SpeakerNote>
+  Pierre Nel, a designer/developer in London, essentially figured out a DSL for the content creators, to be able to shape stuff like color and content position.
+</SpeakerNote>
+
+---
+
+# Limited CSS Subset
+
+import pierre2 from './assets/pierre-2.png';
+
+<img src={pierre2} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+ 
+
+---
+
+# "Rich text" 2.0
+
+import contentClip from './assets/content.mp4';
+
+<video muted autoPlay controls loop src={contentClip} />
+
+<a href="https://twitter.com/eunjae_lee/status/1218662468681183236">Eunjae Lee</a>
 
 
 ---
@@ -463,8 +509,6 @@ https://twitter.com/eunjae_lee/status/1218662468681183236
   <li>Combinatorial explosion means that design problems may occur</li>
 </Appear>
 </ul>
-
-https://twitter.com/pierre_nel/status/1222601162609786880
 
 ---
 
@@ -491,6 +535,20 @@ Now that things are broadly settled, we can _iterate_ and _improve_.
 import spiderman from './assets/spiderman.jpg'
 
 <img src={spiderman} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+We're still niche (according to trends.builtwith.com)
+
+
+import wordpressVsReact from "./assets/top-10k.png";
+
+<img src={wordpressVsReact} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+
+---
+
+If we want to build tools that _most websites_ use, we need to focus on content creators. 
 
 ---
 

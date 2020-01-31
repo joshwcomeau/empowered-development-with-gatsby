@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "mdx-deck talk.mdx --port 7777"
+    "start": "mdx-deck talk.mdx --port 7777",
+    "build": "mdx-deck build talk.mdx"
   },
   "keywords": [],
   "author": "Josh Comeau",

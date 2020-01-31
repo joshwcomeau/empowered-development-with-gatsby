@@ -1,12 +1,8 @@
 require('isomorphic-fetch');
 
 function fetchTweets() {
-  const manualTHing = "eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==";
-
   const key = 'ijSQWZi4FeFsWYisuwrovuZQu';
   const secret = 'eYBa4Ud9hMrq4pMOlt3rivXNaD65qkgvHdPUsUaAkvjA5TzzpH';
-
-
 
   let buff = new Buffer(`${key}:${secret}`);
   let base64data = buff.toString('base64');
@@ -20,28 +16,26 @@ function fetchTweets() {
       'Authorization': `Basic ${base64data}`
     },
     body: 'grant_type=client_credentials',
-  }).then(res => res.json())
-  .then(json => {
-    const {token_type, access_token} = json;
+  })
+    .then(res => res.json())
+    .then(json => {
+      const {access_token} = json;
 
-    return fetch('https://api.twitter.com/1.1/tweets/search/30day/dev.json', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${access_token}`,
-      },
-      body: JSON.stringify({
-        query: 'cats',
-        maxResults: 10,
+      const HASHTAG = '%23GatsbyDaysPets';
+
+      return fetch(`https://api.twitter.com/1.1/search/tweets.json?q=${HASHTAG}`, {
+        headers: {
+          'Authorization': `Bearer ${access_token}`,
+        },
       })
     })
-  })
-  .then(res => res.json())
-  .then(json => {
-    console.log('got data', json)
-  })
-  .catch(err => {
-    console.error(err);
-  })
+    .then(res => res.json())
+    .then(json => {
+      console.log('got data', json)
+    })
+    .catch(err => {
+      console.error(err);
+    })
 }
 
 fetchTweets()
