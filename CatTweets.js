@@ -36,7 +36,8 @@ const CatTweets = () => {
 };
 
 const Wrapper = styled.div`
-
+  max-height: 100vh;
+  overflow: scroll;
 `;
 
 export default CatTweets;
