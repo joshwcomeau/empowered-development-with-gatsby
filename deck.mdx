@@ -352,19 +352,19 @@ Content creators have a friendly UI to update copy in a headless CMS...
 
 ---
 
-import jezebel from "./assets/jezebel.png";
+import news from "./assets/news.png";
 
-<img src={jezebel} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+<img src={news} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
 
 <Small>
-  Jezebel.com
+  nytimes.com
 </Small>
 
 ---
 
-import jezebelCms from "./assets/jezebel-cms.png";
+import newsCms from "./assets/news-cms.png";
 
-<img src={jezebelCms} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+<img src={newsCms} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
 
 
 ---
@@ -434,6 +434,10 @@ import dotComMenuOpen from './assets/dot-com-menu-open.png';
 
 ---
 
+### Navigation data lives in the CMS
+
+---
+
 import contentfulNav from './assets/contentful-nav.png';
 
 <img src={contentfulNav} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
@@ -443,6 +447,18 @@ import contentfulNav from './assets/contentful-nav.png';
 import contentfulNavDropdown from './assets/contentful-nav-dropdown.png';
 
 <img src={contentfulNavDropdown} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+import contentfulNavLowest from './assets/contentful-nav-lowest.png';
+
+<img src={contentfulNavLowest} style={{ maxWidth: "80vw", maxHeight: "70vh" }} />
+
+---
+
+import modelMap from './assets/model-map.png';
+
+<img src={modelMap} style={{ width: "80vw" }} />
 
 ---
 
@@ -480,9 +496,21 @@ A Delicious Simplicity project
 
 ---
 
-More info: 
+There's a webinar showing how they did this!
 
 https://www.youtube.com/watch?v=v88snd6EUaY
+
+---
+
+### Pssst
+
+Gatsby has amazing webinars
+
+gatsbyjs.com/resources/webinars
+
+---
+
+# From the community
 
 ---
 
@@ -491,6 +519,11 @@ https://www.youtube.com/watch?v=v88snd6EUaY
 import pierre1 from './assets/pierre-1.png';
 
 <img src={pierre1} style={{ maxWidth: "80vw", maxHeight: "70vh" }}  />
+
+<br />
+
+<a href="https://twitter.com/pierre_nel/status/1222601162609786880">Pierre Nel</a>
+
 
 <SpeakerNote>
   Pierre Nel, a designer/developer in London, essentially figured out a DSL for the content creators, to be able to shape stuff like color and content position.
@@ -513,6 +546,8 @@ import contentClip from './assets/content.mp4';
 
 <video muted autoPlay controls loop src={contentClip} />
 
+<br />
+
 <a href="https://twitter.com/eunjae_lee/status/1218662468681183236">Eunjae Lee</a>
 
 
@@ -534,7 +569,11 @@ import contentClip from './assets/content.mp4';
 
 ---
 
-Experience for the **modern JAMstack** approach:
+Experience for the **headless CMS** approach:
+
+import rupaulUser from './assets/rupaul-user.gif'
+import rupaulOk from './assets/rupaul-ok.gif'
+import cheer from './assets/cheer.gif'
 
 <table>
   <thead>
@@ -550,13 +589,13 @@ Experience for the **modern JAMstack** approach:
     <tr>
       <Appear>
       <td>
-        <Big>💖</Big>
+        <img src={rupaulUser} style={{objectFit: 'cover', width: 300, height: 400}} />
       </td>
       <td>
-        <Big>🎉</Big>
+        <img src={cheer} style={{objectFit: 'cover', width: 300, height: 400}} />
       </td>
       <td>
-        <Big>🙂</Big>
+        <img src={rupaulOk} style={{objectFit: 'cover', width: 300, height: 400}} />
       </td>
       </Appear>
     </tr>
