@@ -35,13 +35,34 @@ const Wrapper = styled.div`
   & > div {
     overflow-y: auto !important;
     overflow-x: hidden !important;
+
+    & > div {
+      height: unset !important;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
+`
+
+const TwitterHandle = styled.span`
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  top: 1rem;
+  right: 1rem;
+  color: #2D2DEC;
+  opacity: 0.9;
+  font-size: 32px;
+  font-family: 'Futura PT';
 `
 
 const Provider = ({ children }) => {
   return (
     <Wrapper>
       {children}
+      <TwitterHandle>@JoshWComeau</TwitterHandle>
     </Wrapper>
   )
 }
