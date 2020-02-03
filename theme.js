@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from "styled-components";
 
 import CodeSnippet from './CodeSnippet';
@@ -16,7 +17,7 @@ const Big = styled.span`
 `;
 const Small = styled.span`
   font-size: 2rem;
-  margin-top: 2rem
+  margin-top: 2rem;
 `;
 
 const P = styled.p`
@@ -29,6 +30,22 @@ const H1 = styled.h1`
   font-size: 72px;
 `
 
+const Wrapper = styled.div`
+
+  & > div {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+`
+
+const Provider = ({ children }) => {
+  return (
+    <Wrapper>
+      {children}
+    </Wrapper>
+  )
+}
+
 export default {
   components: {
     table: Table,
@@ -37,5 +54,6 @@ export default {
     h1: H1,
     p: P,
     CodeSnippet,
-  }
+  },
+  Provider
 };
